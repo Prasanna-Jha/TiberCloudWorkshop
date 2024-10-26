@@ -4,8 +4,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-from sklearn.neighbors import KNeighborsRegressor
 import time  # Import time module
 
 import pandas as pd

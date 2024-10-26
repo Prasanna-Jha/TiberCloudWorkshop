@@ -43,6 +43,9 @@ rfr = RandomForestRegressor(max_depth=10).fit(X_train, y_train)
 train_score = rfr.score(X_train, y_train)
 train_score
 
+st.write("The predicted values " , rfr.predict(X_test))
+st.write("The Actual values " , y_train)
+
 st.markdown('''**Loan Prediction System** ''')
 
 import PIL 
@@ -105,11 +108,11 @@ user_input_scaled = scaler.transform(user_input_df)
 
 predicted_loan_status = rfr.predict(user_input_scaled)
 
-predicted_loan_status
+st.write( " The chances of Loan_Approval is " , (predicted_loan_status*100), "%")
 
-if int(predicted_loan_status) == 1 :
-    st.write("The predicted loan status is  Approved")
-if int(predicted_loan_status) == 0 :
-    st.write("The predicted loan status is Not Approved")
+# if int(predicted_loan_status) == 1 :
+#     st.write("The predicted loan status is  Approved")
+# if int(predicted_loan_status) == 0 :
+#     st.write("The predicted loan status is Not Approved")
 
 

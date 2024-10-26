@@ -40,15 +40,17 @@ X_test_scaled = scaler.transform(X_test)
 from sklearn.ensemble import RandomForestRegressor
 
 rfr = RandomForestRegressor(max_depth=10).fit(X_train, y_train)
-train_score = rfr.score(X_train, y_train)
-train_score
+# train_score = rfr.score(X_train, y_train)
+# train_score
 
-st.write("The predicted values " , rfr.predict(X_test))
-st.write("The Actual values " , y_train)
+# st.write("The predicted values " , rfr.predict(X_test))
+# st.write("The Actual values " , y_train)
 
-st.markdown('''**Loan Prediction System** ''')
+st.title('''Loan Prediction System ''')
 
-import PIL 
+from PIL import Image
+image = Image.open("Loan_Prediction_using__Machine_Learning_Project.png")
+st.image(image , caption = " " , use_column_width = True  )
 
 
 #Created a StreamLit UI
@@ -101,7 +103,7 @@ b[' self_employed'] = b[' self_employed'].map({"Yes" : 1 , "No" : 0})
 b.dropna()
 user_input_df = pd.concat([user_input_df.drop([' education' , ' self_employed'], axis = 1) , b], axis = 1)
 
-user_input_df
+# user_input_df
 
 #Scaling the user input dataframe 
 user_input_scaled = scaler.transform(user_input_df)
